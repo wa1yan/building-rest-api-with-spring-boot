@@ -45,8 +45,9 @@ public class CashCardController {
                 PageRequest.of(
                         pageable.getPageNumber(),
                         pageable.getPageSize(),
-                        pageable.getSortOr(Sort.by(Sort.Direction.ASC, "amount"))
-                ));
+                        pageable.getSortOr(Sort.by("amount"))
+                )
+        );
         return ResponseEntity.ok(page.getContent());
     }
 }
